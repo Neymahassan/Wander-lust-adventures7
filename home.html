@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Adventures - Discover the World</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366',
+                        secondary: '#FFB800'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+<!-- Header -->
+ <body class="bg-gray-50">
+
+<header class="bg-white shadow-lg sticky top-0 z-[9999]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <h1 class="text-2xl font-['Pacifico'] text-primary">Wanderlust Adventures</h1>
+      </div>
+      <nav class="flex space-x-8 z-[9999]">
+        <a href="home.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+        <a href="destinations.html" class="text-gray-700 hover:text-primary transition-colors">Destinations</a>
+        <a href="booking.html" class="text-gray-700 hover:text-primary transition-colors">Booking</a>
+        <a href="about.html" class="text-gray-700 hover:text-primary transition-colors">About</a>
+        <a href="contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden" style="background-image: url('Amsterdam\,\ Netherlands.jpg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="flex items-center min-h-screen">
+            <div class="w-full lg:w-1/2 text-white">
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">Discover Your Next Adventure</h2>
+                <p class="text-xl mb-8 text-gray-100 leading-relaxed">Explore breathtaking destinations around the world with our expertly crafted travel experiences. From mountain peaks to pristine beaches, your perfect journey awaits.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 !rounded-button font-semibold text-lg transition-colors whitespace-nowrap">
+                        Start Your Journey
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 !rounded-button font-semibold text-lg transition-all whitespace-nowrap">
+                        View Destinations
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Destinations -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h3 class="text-4xl font-bold text-primary mb-4">Featured Destinations</h3>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover our most popular travel destinations, carefully selected for their unique beauty and unforgettable experiences.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="h-64 bg-cover bg-center" style="background-image: url('greec.jpg')"></div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-primary mb-2">Santorini, Greece</h4>
+                    <p class="text-gray-600 mb-4">Experience the magic of whitewashed buildings and stunning sunsets over the Aegean Sea.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-secondary">From $1,299</span>
+                        <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button font-medium transition-colors whitespace-nowrap">
+                            Explore
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="h-64 bg-cover bg-center" style="background: url(greeca.jpg);"></div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-primary mb-2">Bali, Indonesia</h4>
+                    <p class="text-gray-600 mb-4">Immerse yourself in tropical paradise with ancient temples and emerald rice terraces.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-secondary">From $899</span>
+                        <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button font-medium transition-colors whitespace-nowrap">
+                            Explore
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="h-64 bg-cover bg-center" style="background-image: url(swiz.jpg)"></div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-primary mb-2">Swiss Alps, Switzerland</h4>
+                    <p class="text-gray-600 mb-4">Adventure awaits in the majestic peaks and pristine alpine landscapes.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-secondary">From $1,599</span>
+                        <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button font-medium transition-colors whitespace-nowrap">
+                            Explore
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Special Offers -->
+<section class="py-20 bg-gradient-to-br from-primary to-primary/90 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h3 class="text-4xl font-bold mb-4">Special Offers</h3>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">Don't miss out on these limited-time deals for your dream vacation.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-full mr-4">
+                        <i class="ri-flight-takeoff-line text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-semibold">Early Bird Special</h4>
+                        <p class="text-blue-100">Book 3 months in advance</p>
+                    </div>
+                </div>
+                <p class="text-lg mb-6">Save up to 30% on all international destinations when you book your trip 3 months ahead. Perfect for planning your dream vacation with amazing savings.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-3xl font-bold text-secondary">30% OFF</span>
+                    <button class="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-full mr-4">
+                        <i class="ri-group-line text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-semibold">Group Adventure</h4>
+                        <p class="text-blue-100">4+ travelers together</p>
+                    </div>
+                </div>
+                <p class="text-lg mb-6">Gather your friends and family for an unforgettable group adventure. The more you travel together, the more you save on accommodation and activities.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-3xl font-bold text-secondary">25% OFF</span>
+                    <button class="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Testimonials -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h3 class="text-4xl font-bold text-primary mb-4">What Our Travelers Say</h3>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Read authentic reviews from our satisfied customers who have experienced unforgettable journeys with us.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 rounded-xl p-8 text-center">
+                <div class="w-16 h-16 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i class="ri-user-line text-2xl text-white"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-primary mb-2">Sarah Mitchell</h4>
+                <p class="text-gray-500 mb-4">Santorini Adventure</p>
+                <div class="flex justify-center mb-4">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                </div>
+                <p class="text-gray-600 italic">"Absolutely incredible experience! The sunset views in Santorini were breathtaking, and every detail was perfectly planned. Wanderlust Travel made our honeymoon unforgettable."</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-8 text-center">
+                <div class="w-16 h-16 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i class="ri-user-line text-2xl text-white"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-primary mb-2">Marcus Johnson</h4>
+                <p class="text-gray-500 mb-4">Swiss Alps Expedition</p>
+                <div class="flex justify-center mb-4">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                </div>
+                <p class="text-gray-600 italic">"The hiking trails and mountain views exceeded all expectations. Professional guides, excellent accommodations, and seamless organization. Highly recommend for adventure seekers!"</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-8 text-center">
+                <div class="w-16 h-16 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i class="ri-user-line text-2xl text-white"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-primary mb-2">Emily Rodriguez</h4>
+                <p class="text-gray-500 mb-4">Bali Cultural Tour</p>
+                <div class="flex justify-center mb-4">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                </div>
+                <p class="text-gray-600 italic">"Immersive cultural experience that opened my eyes to Balinese traditions. The temple visits and local cuisine tours were highlights. Thank you for an authentic journey!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="py-20 bg-gradient-to-r from-secondary to-secondary/90 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="text-4xl font-bold mb-4">Stay Updated</h3>
+        <p class="text-xl mb-8 text-orange-100">Subscribe to our newsletter and be the first to know about exclusive deals, new destinations, and travel tips.</p>
+        <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-button text-gray-800 border-none outline-none text-lg">
+            <button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 !rounded-button font-semibold text-lg transition-colors whitespace-nowrap">
+                Subscribe
+            </button>
+        </div>
+        <p class="text-sm text-orange-100 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="text-2xl font-['Pacifico'] mb-4">Wanderlust Travel</h4>
+                <p class="text-blue-200 mb-6">Your trusted partner in creating unforgettable travel experiences around the world. Discover, explore, and create memories that last a lifetime.</p>
+                <div class="flex space-x-4">
+                    <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+                        <i class="ri-facebook-fill text-lg"></i>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+                        <i class="ri-twitter-fill text-lg"></i>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+                        <i class="ri-instagram-line text-lg"></i>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+                        <i class="ri-youtube-fill text-lg"></i>
+                    </div>
+                </div>
+            </div>

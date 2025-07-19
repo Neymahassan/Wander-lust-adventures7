@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Wanderlust Travel</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366',
+                        secondary: '#FF6B4A'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-['Pacifico'] text-primary">Wanderlust Travel</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Destinations</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Booking</a>
+                <a href="#" class="text-primary font-medium border-b-2 border-secondary">About</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main class="min-h-screen">
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-primary mb-4">About Us</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">At Wanderlust Travel, we are passionate about creating unforgettable travel experiences. Our team of dedicated travel experts is here to help you explore the world, one destination at a time.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 rounded-xl p-6 shadow-lg">
+                    <h2 class="text-2xl font-bold text-primary mb-4">Our Mission</h2>
+                    <p class="text-gray-700">To provide exceptional travel services that inspire and empower our clients to explore the world. We believe in making travel accessible, enjoyable, and memorable for everyone.</p>
+                </div>
+                <div class="bg-gray-100 rounded-xl p-6 shadow-lg">
+                    <h2 class="text-2xl font-bold text-primary mb-4">Our Vision</h2>
+                    <p class="text-gray-700">To be the leading travel and tour company, recognized for our commitment to quality, customer satisfaction, and innovative travel solutions. We aim to create a world where travel is a source of joy and adventure for all.</p>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">Why Choose Us?</h2>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Expert Travel Advisors: Our team has extensive knowledge and experience in the travel industry.</li>
+                    <li>Personalized Itineraries: We tailor each trip to meet your unique preferences and needs.</li>
+                    <li>24/7 Support: We are here for you at any time, ensuring a smooth travel experience.</li>
+                    <li>Competitive Pricing: We offer the best deals without compromising on quality.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <p>&copy; 2024 Wanderlust Travel. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

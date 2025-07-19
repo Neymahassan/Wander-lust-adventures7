@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Wanderlust Travel</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366',
+                        secondary: '#FF6B4A'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        .custom-radio {
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            position: relative;
+        }
+        .custom-radio:checked {
+            background: #FF6B4A;
+            border-color: #FF6B4A;
+        }
+        .custom-radio:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+        .custom-checkbox {
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            position: relative;
+        }
+        .custom-checkbox:checked {
+            background: #FF6B4A;
+            border-color: #FF6B4A;
+        }
+        .custom-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 0.75rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-['Pacifico'] text-primary">Wanderlust Travel</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Destinations</a>
+                <a href="#" class="text-primary font-medium border-b-2 border-secondary">Booking</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="min-h-screen">
+    <section class="bg-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center mb-6">
+                <a href="#" class="flex items-center text-gray-600 hover:text-primary transition-colors">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                        <i class="ri-arrow-left-line"></i>
+                    </div>
+                    Back to Home
+                </a>
+            </div>
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-primary mb-4">Book Your Adventure</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Plan your perfect getaway with our comprehensive booking system. From destinations to accommodations, we've got you covered.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3">
+                                <span class="text-sm font-bold">1</span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-primary">Travel Details</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Destination</label>
+                                <div class="relative">
+                                    <button class="w-full flex items-center justify-between px-4 py-3 border border-gray-300 rounded-button text-left text-gray-700 hover:border-primary focus:outline-none focus:border-primary" id="destination-dropdown">
+                                        <span id="destination-text">Select destination</span>
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-arrow-down-s-line"></i>
+                                        </div>
+                                    </button>
+                                    <div class="absolute top-full left-0 w-full mt-1 bg-white border border-gray-300 rounded-button shadow-lg hidden z-10" id="destination-menu">
+                                        <div class="py-1 max-h-48 overflow-y-auto">
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="santorini">Santorini, Greece</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="bali">Bali, Indonesia</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="swiss-alps">Swiss Alps, Switzerland</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="tokyo">Tokyo, Japan</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="machu-picchu">Machu Picchu, Peru</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="maldives">Maldives</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="serengeti">Serengeti, Tanzania</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="great-barrier-reef">Great Barrier Reef, Australia</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Package Type</label>
+                                <div class="relative">
+                                    <button class="w-full flex items-center justify-between px-4 py-3 border border-gray-300 rounded-button text-left text-gray-700 hover:border-primary focus:outline-none focus:border-primary" id="package-dropdown">
+                                        <span id="package-text">Select package</span>
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-arrow-down-s-line"></i>
+                                        </div>
+                                    </button>
+                                    <div class="absolute top-full left-0 w-full mt-1 bg-white border border-gray-300 rounded-button shadow-lg hidden z-10" id="package-menu">
+                                        <div class="py-1">
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="basic">Basic Package</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="premium">Premium Package</button>
+                                            <button class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50" data-value="luxury">Luxury Package</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Departure Date</label>
+                                <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-button text-sm focus:outline-none focus:border-primary" id="departure-date">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Return Date</label>
+                                <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-button text-sm focus:outline-none focus:border-primary" id="return-date">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3">
+                                <span class="text-sm font-bold">2</span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-primary">Travelers & Accommodation</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Adults</label>
+                                <div class="flex items-center border border-gray-300 rounded-button">
+                                    <button class="p-3 hover:bg-gray-50" id="adults-minus">
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-subtract-line"></i>
+                                        </div>
+                                    </button>
+                                    <input type="number" value="2" min="1" max="10" class="flex-1 text-center py-3 border-none focus:outline-none" id="adults-count">
+                                    <button class="p-3 hover:bg-gray-50" id="adults-plus">
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-add-line"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Children</label>
+                                <div class="flex items-center border border-gray-300 rounded-button">
+                                    <button class="p-3 hover:bg-gray-50" id="children-minus">
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-subtract-line"></i>
+                                        </div>
+                                    </button>
+                                    <input type="number" value="0" min="0" max="5" class="flex-1 text-center py-3 border-none focus:outline-none" id="children-count">
+                                    <button class="p-3 hover:bg-gray-50" id="children-plus">
+                                        <div class="w-4 h-4 flex items-center justify-center">
+                                            <i class="ri-add-line"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700 mb-3">Accommodation Preference</label>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <label class="flex items-center p-4 border border-gray-300 rounded-button cursor-pointer hover:border-primary">
+                                        <input type="radio" name="accommodation" value="standard" class="custom-radio mr-3">
+                                        <div>
+                                            <div class="font-medium text-gray-900">Standard</div>
+                                            <div class="text-sm text-gray-600">3-star hotels</div>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center p-4 border border-gray-300 rounded-button cursor-pointer hover:border-primary">
+                                        <input type="radio" name="accommodation" value="deluxe" class="custom-radio mr-3" checked>
+                                        <div>
+                                            <div class="font-medium text-gray-900">Deluxe</div>
+                                            <div class="text-sm text-gray-600">4-star hotels</div>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center p-4 border border-gray-300 rounded-button cursor-pointer hover:border-primary">
+                                        <input type="radio" name="accommodation" value="luxury" class="custom-radio mr-3">
+                                        <div>
+                                            <div class="font-medium text-gray-900">Luxury</div>
+                                            <div class="text-sm text-gray-600">5-star resorts</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3">
+                            <span class="text-sm font-bold">3</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-primary">Personal Information</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input type="text" placeholder="Enter your first name" class="w-full px-4 py-3 border border-gray-300 rounded-button text-sm focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input type="text" placeholder="Enter your last name" class="w-full px-4 py-3 border border-gray-300 rounded-button text-sm focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 border border-gray-300 rounded-button text-sm focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" placeholder="Enter your phone number" class="w-full px-4 py-3 border border-gray-300 rounded-button text-sm focus:outline-none focus:border-primary">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Special Requests</label>
+                            <textarea placeholder="Any special requirements or requests..." rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-button text-sm focus:outline-none focus:border-primary resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 sticky top-24">
+                    <h3 class="text-xl font-bold text-primary mb-6">Booking Summary</h3>
+                    <div class="space-y-4" id="booking-summary">
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <div>
+                                <div class="font-medium text-gray-900" id="summary-destination">Select destination</div>
+                                <div class="text-sm text-gray-600" id="summary-package">Package not selected</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Dates:</span>
+                            <span class="text-gray-900" id="summary-dates">Not selected</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Travelers:</span>
+                            <span class="text-gray-900" id="summary-travelers">2 Adults, 0 Children</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600">Accommodation:</span>
+                            <span class="text-gray-900" id="summary-accommodation">Deluxe</span>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-600">Subtotal:</span>
+                                <span class="text-gray-900" id="summary-subtotal">$0</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-600">Taxes & Fees:</span>
+                                <span class="text
